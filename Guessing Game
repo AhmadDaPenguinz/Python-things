@@ -1,0 +1,29 @@
+import random
+
+while True:
+    print('Welcome! Type "Play" to play. Type "Quit" to Quit the program.')
+    choice = input()
+    if 'Play' in choice:
+        print('Very Well. I am thinking of a number Between 1 and Hundred. Try to Guess it!')
+        break
+    elif 'Quit' in choice:
+        exit()
+    else:
+        print("Sorry, That's not a valid Function.")
+        continue
+number = random.randint(1, 100)
+GuessesTaken = 0
+while GuessesTaken < 13:
+    guess = int(input('Enter a Number: '))
+    GuessesTaken += 1
+
+    if guess < number:
+        print('The Number is bigger than that!')
+        continue
+    if guess > number:
+        print('The number is Smaller than that!')
+        continue
+    if guess == number:
+        print(f'You got it! the Number is {number}! Thanks for Playing!')
+        break
+
